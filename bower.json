@@ -1,0 +1,25 @@
+{
+  "name": "myapp",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Yevhenii Krotenko <kroegen4@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "tooltipster": "~3.3.0",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}

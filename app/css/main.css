@@ -1,0 +1,18 @@
+/* line 1, app/css/sass/plugin.scss */
+.test-section {
+  background-color: #FFF;
+}
+
+/* line 3, ./app/css/sass/main.sass */
+body {
+  background-color: #333;
+}
+
+/* line 6, ./app/css/sass/main.sass */
+.blue {
+  color: blue;
+}
+
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uY3NzIiwicGx1Z2luLnNjc3MiLCJtYWluLnNhc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsc0NBQXNDO0FDQXRDO0VBQ0MsdUJBQXNCO0NERXRCOztBQUVELHNDQUFzQztBRUh0QztFQUNDLHVCQUFzQjtDRkt0Qjs7QUFFRCxzQ0FBc0M7QUVMdEM7RUFDQyxZQUFXO0NGT1giLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBsaW5lIDEsIGFwcC9jc3Mvc2Fzcy9wbHVnaW4uc2NzcyAqL1xyXG4udGVzdC1zZWN0aW9uIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGO1xyXG59XHJcblxyXG4vKiBsaW5lIDMsIC4vYXBwL2Nzcy9zYXNzL21haW4uc2FzcyAqL1xyXG5ib2R5IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzMzO1xyXG59XHJcblxyXG4vKiBsaW5lIDYsIC4vYXBwL2Nzcy9zYXNzL21haW4uc2FzcyAqL1xyXG4uYmx1ZSB7XHJcbiAgY29sb3I6IGJsdWU7XHJcbn1cclxuXHJcblxyXG4iLCIudGVzdC1zZWN0aW9uIHtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGO1xyXG59IiwiQGltcG9ydCBcInBsdWdpbi5zY3NzXCJcclxuXHJcbmJvZHlcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjMzMzXHJcblxyXG4uYmx1ZVxyXG5cdGNvbG9yOiBibHVlIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */
