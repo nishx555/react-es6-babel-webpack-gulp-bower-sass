@@ -17,6 +17,8 @@ var gulp = require("gulp"),
   sasslint = require('gulp-sass-lint'),
   clean = require('gulp-clean'),
   sftp = require('gulp-sftp'),
+  imagemin = require('gulp-imagemin'),
+  pngquant = require('imagemin-pngquant'),
   wiredep = require('wiredep').stream;
 
 // server app
@@ -87,6 +89,23 @@ gulp.task('sftp', function () {
         }));
 });
 
+// images
+gulp.task('images', function(){
+  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+  .pipe(imagemin({
+    progressive: true,
+    svgoPlugins: [{removeViweBox: false}],
+    use: [pngquant()]
+    }))
+  .pipe(gulp.dest('dist/images'))
+});
+
+// fonts
+gulp.task('fonts', function() {
+  return gulp.src('app/fonts/**/*')
+  .pipe(gulp.dest('dist/fonts'))
+});
+
 // watch  
 gulp.task('watch', function () {
   gulp.watch(['./app/*.html'], ['html']);
@@ -100,7 +119,7 @@ gulp.task('watch', function () {
 gulp.task('default', ['connect', 'watch']);
 
 // build
-gulp.task('build', ['clean'], function () {
+gulp.task('build', ['clean', 'images', 'fonts'], function () {
   gulp.src('./app/*.html')
     .pipe(useref())
     .pipe(gulpif('*.js', uglify()))
