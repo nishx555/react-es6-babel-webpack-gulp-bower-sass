@@ -19,6 +19,7 @@ var gulp = require("gulp"),
   sftp = require('gulp-sftp'),
   imagemin = require('gulp-imagemin'),
   pngquant = require('imagemin-pngquant'),
+  webpack = require('webpack-stream');
   wiredep = require('wiredep').stream;
 
 // server app
@@ -72,6 +73,13 @@ gulp.task('bower', function () {
     .pipe(gulp.dest('./app'));
 });
 
+// webpack
+gulp.task('webpack', function() {
+  return gulp.src('./app/js/app.js')
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('./'));   
+});
+
 // clean
 gulp.task('clean', function () {
     return gulp.src('dist', {read: false})
@@ -112,11 +120,12 @@ gulp.task('watch', function () {
   gulp.watch(['./app/css/*.css'], ['css']);
   gulp.watch(['./app/js/*.js'], ['js']);
   gulp.watch(['./app/css/sass/*.{sass,scss}'], ['sass']);
+  gulp.watch(['./app/js/**/*'], ['webpack']);
   gulp.watch('bower.json', ['bower']);
 });
 
 // default
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['webpack','connect', 'watch']);
 
 // build
 gulp.task('build', ['clean', 'images', 'fonts'], function () {
