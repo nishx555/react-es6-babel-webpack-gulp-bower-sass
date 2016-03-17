@@ -1,4 +1,5 @@
 var gulp = require("gulp"),
+  babel = require("gulp-babel"),
   connect = require("gulp-connect"),
   opn = require("opn"),
   gutil = require("gulp-util"),
@@ -115,7 +116,6 @@ gulp.task('watch', function () {
   gulp.watch(['./app/js/*.js'], ['js']);
   gulp.watch(['./app/css/sass/*.{sass,scss}'], ['sass']);
   gulp.watch(['./app/js/**/*'], ['webpack']);
-  gulp.watch('bower.json', ['bower']);
 });
 
 // default
@@ -125,8 +125,8 @@ gulp.task('default', ['webpack','connect', 'watch']);
 gulp.task('build', ['clean', 'images', 'fonts'], function () {
   gulp.src('./app/*.html')
     .pipe(useref())
+    .pipe(gulpif('*.js', babel())
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', minifycss()))
-    .pipe(gulp.dest('dist'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('dist')))
 });
